@@ -104,6 +104,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
     color: white;
   /* background: url('path/to/your/background-image.jpg') no-repeat center center fixed;
     background-size: cover; */
+  	overflow-x: hidden;
 }
 
 /* Style for the main passage area */
@@ -123,6 +124,11 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
     font-weight: bold;
     color: white; /* Ensure the header text color is white */
     font-family: 'Courier New', Courier, monospace; /* Monospace font*/
+}
+
+.passage-header, #passage h1, #passage p {
+    max-width: 100%;
+    word-wrap: break-word;
 }
 
 /* Style for passage links */
@@ -145,6 +151,10 @@ h1, h2, h3, h4, h5, h6 {
   	margin-bottom: -40px;
 }
 
+h4{
+      font-size: 70px;
+}
+
 /* Style for paragraphs within passages */
 p {
     font-family: 'Courier New', Courier, monospace;
@@ -155,17 +165,17 @@ p {
 
 /* Style for buttons */
 button {
-    background-color: #1a73e8;
-    color: white;
+    background-color: #df5e00;
+    color: #0d1b1c;
     border: none;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 36px;
     cursor: pointer;
     border-radius: 5px;
 }
 
 button:hover {
-    background-color: #155ab6;
+    background-color: #efab30;
 }
 
 /* Hide the sidebar and its contents */
@@ -180,7 +190,31 @@ button:hover {
 
 
 /* Importing Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');</style><script role="script" id="twine-user-script" type="text/twine-javascript">if (typeof jQuery === 'undefined') {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@media screen and (max-width: 600px) {
+    body, p, a {
+        font-size: 18px; /* Reduce font size to half */
+  }
+  	h1 {
+      font-size: 15px;
+  }
+  	h2 {
+      font-size: 25px;
+  }
+  	h3 {
+      	font-size: 18px;
+  }
+  	h4{
+      font-size: 40px;
+  }
+    #passages {
+        padding: 5px; /* Further reduce padding for smaller screens */
+    }
+  button {
+    font-size: 20px;
+	}
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">if (typeof jQuery === 'undefined') {
     var script = document.createElement('script');
     script.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
     document.getElementsByTagName('head')[0].appendChild(script);
@@ -190,13 +224,25 @@ Everything is covered in ash.
 This bleak world is devoid of life.
 
 [[Walk along the road|The Road]]
-[[Walk through the woods|The Woods]]</tw-passagedata><tw-passagedata pid="2" name="Gending Group" tags="" position="200,1000" size="100,100">&lt;h1&gt;YOU SURVIVED ✅&lt;/h1&gt;
-&lt;h2&gt;You joined a trustworthy group.&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="3" name="HeaderTemplate" tags="" position="0,0" size="100,100">&lt;h1 class=&quot;passage-header&quot;&gt;&lt;&lt;print passage()&gt;&gt;&lt;/h1&gt;</tw-passagedata><tw-passagedata pid="4" name="Bending Eaten" tags="" position="1000,1000" size="100,100">&lt;h1&gt;YOU DIED ❌&lt;/h1&gt;
-&lt;h2&gt;You were eaten by cannibals.&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="5" name="Gending Safety" tags="" position="400,1000" size="100,100">&lt;h1&gt;YOU SURVIVED ✅&lt;/h1&gt;
-&lt;h2&gt;You found a safehaven.&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="6" name="Bending Starvation" tags="" position="1200,1000" size="100,100">&lt;h1&gt;YOU DIED ❌&lt;/h1&gt;
-&lt;h2&gt;You starved to death.&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="7" name="Bending Shot" tags="" position="1400,1000" size="100,100">&lt;h1&gt;YOU DIED ❌&lt;/h1&gt;
-&lt;h2&gt;You were fatally shot.&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="8" name="Bending Lightning" tags="" position="1600,1000" size="100,100">&lt;h1&gt;YOU DIED ❌&lt;/h1&gt;
-&lt;h2&gt;You were struck by lightning.&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="9" name="The Group - An Offer" tags="" position="2200,600" size="100,100">&lt;&lt;display &quot;HeaderTemplate&quot;&gt;&gt;
+[[Walk through the woods|The Woods]]</tw-passagedata><tw-passagedata pid="2" name="Gending Group" tags="" position="200,1000" size="100,100">&lt;h4&gt;YOU SURVIVED ✅&lt;/h4&gt;
+&lt;h2&gt;You joined a trustworthy group.&lt;/h2&gt;
+
+&lt;button onclick=&quot;window.location.href=&#39;https://www.carrythefire.world/quiz.html&#39;&quot;&gt;Return to CarryTheFire.World&lt;/button&gt;</tw-passagedata><tw-passagedata pid="3" name="HeaderTemplate" tags="" position="0,0" size="100,100">&lt;h1 class=&quot;passage-header&quot;&gt;&lt;&lt;print passage()&gt;&gt;&lt;/h1&gt;</tw-passagedata><tw-passagedata pid="4" name="Bending Eaten" tags="" position="1000,1000" size="100,100">&lt;h4&gt;YOU DIED ❌&lt;/h4&gt;
+&lt;h2&gt;You were eaten by cannibals.&lt;/h2&gt;
+
+&lt;button onclick=&quot;window.location.href=&#39;https://www.carrythefire.world/quiz.html&#39;&quot;&gt;Return to CarryTheFire.World&lt;/button&gt;</tw-passagedata><tw-passagedata pid="5" name="Gending Safety" tags="" position="400,1000" size="100,100">&lt;h4&gt;YOU SURVIVED ✅&lt;/h4&gt;
+&lt;h2&gt;You found a safehaven.&lt;/h2&gt;
+
+&lt;button onclick=&quot;window.location.href=&#39;https://www.carrythefire.world/quiz.html&#39;&quot;&gt;Return to CarryTheFire.World&lt;/button&gt;</tw-passagedata><tw-passagedata pid="6" name="Bending Starvation" tags="" position="1200,1000" size="100,100">&lt;h4&gt;YOU DIED ❌&lt;/h4&gt;
+&lt;h2&gt;You starved to death.&lt;/h2&gt;
+
+&lt;button onclick=&quot;window.location.href=&#39;https://www.carrythefire.world/quiz.html&#39;&quot;&gt;Return to CarryTheFire.World&lt;/button&gt;</tw-passagedata><tw-passagedata pid="7" name="Bending Shot" tags="" position="1400,1000" size="100,100">&lt;h4&gt;YOU DIED ❌&lt;/h4&gt;
+&lt;h2&gt;You were fatally shot.&lt;/h2&gt;
+
+&lt;button onclick=&quot;window.location.href=&#39;https://www.carrythefire.world/quiz.html&#39;&quot;&gt;Return to CarryTheFire.World&lt;/button&gt;</tw-passagedata><tw-passagedata pid="8" name="Bending Lightning" tags="" position="1600,1000" size="100,100">&lt;h4&gt;YOU DIED ❌&lt;/h4&gt;
+&lt;h2&gt;You were struck by lightning.&lt;/h2&gt;
+
+&lt;button onclick=&quot;window.location.href=&#39;https://www.carrythefire.world/quiz.html&#39;&quot;&gt;Return to CarryTheFire.World&lt;/button&gt;</tw-passagedata><tw-passagedata pid="9" name="The Group - An Offer" tags="" position="2200,600" size="100,100">&lt;&lt;display &quot;HeaderTemplate&quot;&gt;&gt;
 You are invited to join the group.
 
 [[Accept|Gending Group]]
@@ -230,8 +276,10 @@ The river comes to a clearing.
 There is no sign of anyone else around.
 
 [[Take refuge|Gending Safety]]
-[[Go for a swim|Bending Drown]]</tw-passagedata><tw-passagedata pid="16" name="Bending Drown" tags="" position="1800,1000" size="100,100">&lt;h1&gt;YOU DIED ❌&lt;/h1&gt;
-&lt;h2&gt;You were swept away by the river.&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="17" name="The Group" tags="" position="2200,200" size="100,100">&lt;&lt;display &quot;HeaderTemplate&quot;&gt;&gt;
+[[Go for a swim|Bending Drown]]</tw-passagedata><tw-passagedata pid="16" name="Bending Drown" tags="" position="1800,1000" size="100,100">&lt;h4&gt;YOU DIED ❌&lt;/h4&gt;
+&lt;h2&gt;You were swept away by the river.&lt;/h2&gt;
+
+&lt;button onclick=&quot;window.location.href=&#39;https://www.carrythefire.world/quiz.html&#39;&quot;&gt;Return to CarryTheFire.World&lt;/button&gt;</tw-passagedata><tw-passagedata pid="17" name="The Group" tags="" position="2200,200" size="100,100">&lt;&lt;display &quot;HeaderTemplate&quot;&gt;&gt;
 You encounter a trio of three women.
 They look apprehensive.
 
@@ -242,8 +290,10 @@ You take a closer look at the pile.
 It is a heap of small wood and metal fragments.
 
 [[Continue on the road|The Road - Hungry]]
-[[Attempt to construct something|Bending Tetanus]]</tw-passagedata><tw-passagedata pid="20" name="Bending Tetanus" tags="" position="2000,1000" size="100,100">&lt;h1&gt;YOU DIED ❌&lt;/h1&gt;
-&lt;h2&gt;You developed tetanus.&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="21" name="The Woods - Clearing" tags="" position="600,600" size="100,100">&lt;&lt;display &quot;HeaderTemplate&quot;&gt;&gt;
+[[Attempt to construct something|Bending Tetanus]]</tw-passagedata><tw-passagedata pid="20" name="Bending Tetanus" tags="" position="2000,1000" size="100,100">&lt;h4&gt;YOU DIED ❌&lt;/h4&gt;
+&lt;h2&gt;You developed tetanus.&lt;/h2&gt;
+
+&lt;button onclick=&quot;window.location.href=&#39;https://www.carrythefire.world/quiz.html&#39;&quot;&gt;Return to CarryTheFire.World&lt;/button&gt;</tw-passagedata><tw-passagedata pid="21" name="The Woods - Clearing" tags="" position="600,600" size="100,100">&lt;&lt;display &quot;HeaderTemplate&quot;&gt;&gt;
 You reach a large clearing of farmland.
 There is a small toolshed.
 
@@ -273,15 +323,21 @@ The storm only gets worse.
 Dusk is approaching.
 
 [[Continue through the woods|The Woods - Clearing]]
-[[Sleep in the brush|Bending Freeze]]</tw-passagedata><tw-passagedata pid="27" name="Bending Freeze" tags="" position="800,1000" size="100,100">&lt;h1&gt;YOU DIED ❌&lt;/h1&gt;
-&lt;h2&gt;You froze to death.&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="28" name="Gending Food" tags="" position="600,1000" size="100,100">&lt;h1&gt;YOU SURVIVED ✅&lt;/h1&gt;
-&lt;h2&gt;You found food.&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="29" name="Old Man - Amused" tags="" position="1200,400" size="100,100">&lt;&lt;display &quot;HeaderTemplate&quot;&gt;&gt;
+[[Sleep in the brush|Bending Freeze]]</tw-passagedata><tw-passagedata pid="27" name="Bending Freeze" tags="" position="800,1000" size="100,100">&lt;h4&gt;YOU DIED ❌&lt;/h4&gt;
+&lt;h2&gt;You froze to death.&lt;/h2&gt;
+
+&lt;button onclick=&quot;window.location.href=&#39;https://www.carrythefire.world/quiz.html&#39;&quot;&gt;Return to CarryTheFire.World&lt;/button&gt;</tw-passagedata><tw-passagedata pid="28" name="Gending Food" tags="" position="600,1000" size="100,100">&lt;h4&gt;YOU SURVIVED ✅&lt;/h4&gt;
+&lt;h2&gt;You found food.&lt;/h2&gt;
+
+&lt;button onclick=&quot;window.location.href=&#39;https://www.carrythefire.world/quiz.html&#39;&quot;&gt;Return to CarryTheFire.World&lt;/button&gt;</tw-passagedata><tw-passagedata pid="29" name="Old Man - Amused" tags="" position="1200,400" size="100,100">&lt;&lt;display &quot;HeaderTemplate&quot;&gt;&gt;
 The old man laughs at your joke.
 He invites you to join him on his journey.
 
 [[Accept|Gending Companion]]
-[[Reject|Old Man - Walking Away]]</tw-passagedata><tw-passagedata pid="30" name="Gending Companion" tags="" position="1200,500" size="100,100">&lt;h1&gt;YOU SURVIVED ✅&lt;/h1&gt;
-&lt;h2&gt;You found a companion.&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="31" name="Old Man - Walking Away" tags="" position="1300,500" size="100,100">&lt;&lt;display &quot;HeaderTemplate&quot;&gt;&gt;
+[[Reject|Old Man - Walking Away]]</tw-passagedata><tw-passagedata pid="30" name="Gending Companion" tags="" position="1200,500" size="100,100">&lt;h4&gt;YOU SURVIVED ✅&lt;/h4&gt;
+&lt;h2&gt;You found a companion.&lt;/h2&gt;
+
+&lt;button onclick=&quot;window.location.href=&#39;https://www.carrythefire.world/quiz.html&#39;&quot;&gt;Return to CarryTheFire.World&lt;/button&gt;</tw-passagedata><tw-passagedata pid="31" name="Old Man - Walking Away" tags="" position="1300,500" size="100,100">&lt;&lt;display &quot;HeaderTemplate&quot;&gt;&gt;
 The old man respects your decision.
 He offers you food as a parting gift.
 
@@ -320,8 +376,10 @@ You are not alone.
 You stumble around in the dark.
 A repulsive scent fills the air.
 
-[[Continue searching|The Toolshed - Company]]</tw-passagedata><tw-passagedata pid="39" name="Gending Avoided" tags="" position="1500,400" size="100,100">&lt;h1&gt;YOU SURVIVED ✅&lt;/h1&gt;
-&lt;h2&gt;You avoided the marauders.&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="40" name="The Escape - Running" tags="" position="1600,400" size="100,100">&lt;&lt;display &quot;HeaderTemplate&quot;&gt;&gt;
+[[Continue searching|The Toolshed - Company]]</tw-passagedata><tw-passagedata pid="39" name="Gending Avoided" tags="" position="1500,400" size="100,100">&lt;h4&gt;YOU SURVIVED ✅&lt;/h4&gt;
+&lt;h2&gt;You avoided the marauders.&lt;/h2&gt;
+
+&lt;button onclick=&quot;window.location.href=&#39;https://www.carrythefire.world/quiz.html&#39;&quot;&gt;Return to CarryTheFire.World&lt;/button&gt;</tw-passagedata><tw-passagedata pid="40" name="The Escape - Running" tags="" position="1600,400" size="100,100">&lt;&lt;display &quot;HeaderTemplate&quot;&gt;&gt;
 A trail runs through the woods.
 
 [[Keep running|Gending Safety]]
@@ -362,12 +420,12 @@ With a stern expression, she asks you a question.
 [[&#39;&quot;Hope&quot;&#39;|The Group - An Offer]]</tw-passagedata><tw-passagedata pid="48" name="The Group - Confirmation" tags="" position="2400,400" size="100,100">&lt;&lt;display &quot;HeaderTemplate&quot;&gt;&gt;
 &lt;h3&gt;&quot;Safety?&quot;&lt;/h3&gt;
 
-[[&#39;&quot;Yes, though taking risks is important too&quot;&#39;|The Group - An Offer]]
+[[&#39;&quot;Yes, though taking risks is important too.&quot;&#39;|The Group - An Offer]]
 [[&#39;&quot;Nevermind. I don&#39;t care about safety.&quot;&#39;|The Group - Interrogation]]</tw-passagedata><tw-passagedata pid="49" name="The Group - Interrogation" tags="" position="2400,600" size="100,100">&lt;&lt;display &quot;HeaderTemplate&quot;&gt;&gt;
-&lt;h3&gt;&quot;So you lied?&quot;&lt;/h3&gt;
+&lt;h3&gt;&quot;So you were lying?&quot;&lt;/h3&gt;
 
-[[&#39;&quot;No, I didn&#39;t.&quot;&#39;|Bending Shot]]
-[[&#39;&quot;Yes.&quot;&#39;|Bending Shot]]</tw-passagedata><tw-passagedata pid="50" name="The Road - Debris" tags="" position="200,400" size="100,100">&lt;&lt;display &quot;HeaderTemplate&quot;&gt;&gt;
+[[&#39;&quot;Yes.&quot;&#39;|Bending Shot]]
+[[&#39;&quot;No!&quot;&#39;|Bending Shot]]</tw-passagedata><tw-passagedata pid="50" name="The Road - Debris" tags="" position="200,400" size="100,100">&lt;&lt;display &quot;HeaderTemplate&quot;&gt;&gt;
 You encounter a pile of debris.
 
 [[Ignore|The Road - Endless]]
@@ -395,8 +453,10 @@ Everything is covered in a blanket of fine ash.
 There are two buildings on the property.
 
 [[Explore the mausoleum|The Cemetery - Mausoleum]]
-[[Explore the chapel|Gending Safety]]</tw-passagedata><tw-passagedata pid="57" name="Bending Bridge" tags="" position="2600,300" size="100,100">&lt;h1&gt;YOU DIED ❌&lt;/h1&gt;
-&lt;h2&gt;You didn&#39;t quite make it.&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="58" name="The Bridge - Ground Below" tags="" position="2700,300" size="100,100">&lt;&lt;display &quot;HeaderTemplate&quot;&gt;&gt;
+[[Explore the chapel|Gending Safety]]</tw-passagedata><tw-passagedata pid="57" name="Bending Bridge" tags="" position="2600,300" size="100,100">&lt;h4&gt;YOU DIED ❌&lt;/h4&gt;
+&lt;h2&gt;You didn&#39;t quite make it.&lt;/h2&gt;
+
+&lt;button onclick=&quot;window.location.href=&#39;https://www.carrythefire.world/quiz.html&#39;&quot;&gt;Return to CarryTheFire.World&lt;/button&gt;</tw-passagedata><tw-passagedata pid="58" name="The Bridge - Ground Below" tags="" position="2700,300" size="100,100">&lt;&lt;display &quot;HeaderTemplate&quot;&gt;&gt;
 You climb down to the ground below.
 The river looks to be too wide to jump across.
 
