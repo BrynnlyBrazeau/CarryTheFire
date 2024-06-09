@@ -23,3 +23,25 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+//ALSO USING THIS FILE FOR PDF VIEWING
+document.addEventListener('DOMContentLoaded', () => {
+    const fullscreenButtons = document.querySelectorAll('.fullscreen-btn');
+
+    fullscreenButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const containerId = button.getAttribute('data-container');
+            const container = document.querySelector(`.pdf-container[data-container="${containerId}"]`);
+
+            if (!document.fullscreenElement) {
+                container.requestFullscreen();
+                container.classList.add('fullscreen');
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                    container.classList.remove('fullscreen');
+                }
+            }
+        });
+    });
+});
