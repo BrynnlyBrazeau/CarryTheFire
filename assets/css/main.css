@@ -3459,3 +3459,25 @@ iframe.pdf-viewer {
 	z-index: 1000;
 	background-color: #476762;
 }
+
+/*iframe for youtube embed*/
+.scaled-iframe {
+	width: 100%;
+	height: auto;
+}
+
+/* Style for screens wider than 700px */
+@media (min-width: 701px) {
+	.scaled-iframe {
+		width: 700px;
+		height: 700px;
+	}
+}
+
+/* Style for screens 700px or narrower */
+@media (max-width: 700px) {
+	.scaled-iframe {
+		width: 256px;
+		height: 256px;
+	}
+}
